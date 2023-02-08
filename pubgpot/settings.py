@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 # ALLOWED_HOSTS = ['stark-retreat-41899.herokuapp.com']
 
-ALLOWED_HOSTS = ['web-production-7799.up.railway.app']
+ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
