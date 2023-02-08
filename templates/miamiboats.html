@@ -1,0 +1,660 @@
+{% load static %}
+{% static "images" as baseUrl %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Our Yachts || Miami JETSKI</title>
+
+	<!-- Responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+	{% comment %} <link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/imp.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom-animate.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css"> {% endcomment %}
+   
+    <link rel="stylesheet" href="{% static 'styles\aos.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\imp.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\custom-animate.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\font-awesome.min.css'%}">
+
+
+    {% comment %} <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'styles\color.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\rtl.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\style.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\responsive.css'%}">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href={% static "images/favicon/apple-touch-icon.png" %}>
+    <link rel="icon" type="image/png" href={% static "images/favicon/favicon-32x32.png" sizes="32x32" %}>
+    <link rel="icon" type="image/png" href={% static "images/favicon/favicon-16x16.png" sizes="16x16" %}>
+
+    <!-- Fixing Internet Explorer-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    
+</head>
+
+<body>
+<div class="boxed_wrapper ltr">
+
+    {% comment %} <div class="preloader"></div>  {% endcomment %}
+
+    <!-- page-direction -->
+    <div class="page_direction">
+        <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
+        <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
+    </div>
+    <!-- page-direction end -->
+
+    <!-- main header -->
+    <header class="main-header"> 
+        <!--Start Header upper -->
+        <div class="header-upper">
+            <div class="container-box clearfix">
+                <div class="outer-box clearfix"> 
+                    <div class="header-upper-left float-left clearfix">
+                        <div class="logo">
+                            <a href="index.html"><img src={% static "images/resources/holo.png" %} alt="Awesome Logo" title=""></a>
+                        </div>
+                    </div>
+                    <div class="header-upper-middle float-left clearfix">
+                        <div class="nav-outer clearfix">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><span class="icon fa fa-bars"></span></div>
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="dropdown"><a href="{% url 'home'%}">Home</a>
+                                            {% comment %} <ul>
+                                                <li><a href="index.html">Home Page 01</a></li>
+                                                <li><a href="index-2.html">Home Page 02</a></li>
+                                                <li class="dropdown"><a href="#">Header Styles</a>
+                                                    <ul>
+                                                        <li><a href="index.html">Header Style One</a></li>
+                                                        <li><a href="index-2.html">Header Style Two</a></li>
+                                                    </ul>    
+                                                </li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                        <li class="dropdown"><a href="servicedetail1">Book Now</a>
+                                            <ul>
+                                                <li><a href="servicedetail1">Party Boats</a></li>
+                                                <li><a href="servicedetail2">Weekdays Special</a></li>
+                                                <li><a href="servicedetail3">Yatch Rentals</a></li>
+                                                <li><a href="servicedetail4">PONTOON BOAT</a></li>
+                                                <li><a href="servicedetail5">Double Riders</a></li>
+                                                <li><a href="servicedetail6">Pairs Rider</a></li>
+                                            </ul>
+                                        <li><a href="miamiabout">About</a></li>
+                                        <li><a href="miamiservices">Services</a></li>
+                                        <li><a href="miamiboats">Our Boats</a>
+                                            {% comment %} <ul>
+                                                <li><a href="yachts.html">Our Yachts</a></li>
+                                                <li><a href="yachts-details.html">Yachts Details</a></li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                        {% comment %} <li><a href="destinations.html">Destinations</a></li>
+                                        <li class="dropdown"><a href="#">News</a>
+                                        	<ul>
+                                                <li><a href="blog.html">Latest News</a></li>
+                                                <li><a href="blog-single.html">News Single</a></li>
+                                            </ul>
+                                        </li> {% endcomment %}
+                                        <li><a href="miamicontact">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>                        
+                            <!-- Main Menu End-->
+                            <div class="menu-right-content">
+                                <div class="header-social-links">
+                                    <ul class="social-links-style1">
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header-upper-right float-right clearfix">
+                        <div class="call-us-now">
+                            <div class="icon thm-clr1">
+                                <span class="flaticon-smartphone"></span>    
+                            </div>
+                            <div class="title">
+                                <h6>Call Now</h6>
+                                <a href="tel:6668880000">666 888 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!--End Header Upper-->
+        
+        <!--Start header lawer -->
+        <div class="header-lawer">
+            <div class="container-box clearfix">
+                <div class="outer-box clearfix">
+                    <!--Top Left-->
+                    <div class="header-lawer-left float-left">
+                        <ul class="clearfix">
+                            <li><span class="flaticon-pin"></span><b>Address:</b> 401 Biscayne Blvd. Pier 5,Slip #31, Miami, FL 33132, United States</li>
+                            <li><span class="flaticon-mail"></span><b>Email:</b> <a href="mailto:jetskirentalm@gmail.com">jetskirentalm@gmail.com</a></li>
+                            <li><span class="flaticon-clock"></span><b>Timing:</b> Mon - Fri 09:00am - 07:00pm</li>
+                        </ul>
+                    </div>
+                    <!--Top Right-->
+                    {% comment %} <div class="header-lawer-right float-right">
+                        
+                        <div class="language-switcher">
+                            <div id="polyglotLanguageSwitcher">
+                                <form action="#">
+                                    <select id="polyglot-language-options">
+                                        <option id="en" value="en" selected>English</option>
+                                        <option id="fr" value="fr">French</option>
+                                        <option id="de" value="de">German</option>
+                                        <option id="it" value="it">Italian</option>
+                                        <option id="es" value="es">Spanish</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="login-signup-box">
+                            <ul>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Sign Up</a></li>
+                            </ul>
+                        </div>    {% endcomment %}
+                            
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <!--End header lawer -->
+       
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="container">
+                <div class="clearfix">
+                    <!--Logo-->
+                    <div class="logo float-left">
+                        <a href="index.html" class="img-responsive"><img src={% static "images/resources/holo.png" %} alt="" title=""></a>
+                    </div>
+                    <!--Right Col-->
+                    <div class="right-col float-right">
+                        <!-- Main Menu -->
+                        <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Sticky Header-->
+        
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src={% static "images/resources/holo.png" %} alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <!--Social Links-->
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="fab fa fa-facebook-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-twitter-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-pinterest-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-google-plus-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-youtube-square"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu -->  
+    </header>
+
+
+    <!--Start breadcrumb area-->     
+    <section class="breadcrumb-area" style="background-image: url('{% static 'images/breadcrumb/bc1.jpg'%}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title">
+                           <h1>Our Yachts</h1>
+                        </div>
+                        <div class="breadcrumb-menu">
+                            <ul class="clearfix">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">Our Yachts</li>
+                            </ul>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End breadcrumb area-->
+
+    <!--Start Boats Skipper Form Area Style2-->
+    {% comment %} <section class="boats-skipper-form-area style2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="boats-skipper-search-box style2 text-center">
+                        <form class="boats-skipper-form" name="boats-skipper-form" action="#" method="post"> 
+                            <div class="row"> 
+                                <div class="col-xl-12">
+                                    <div class="input-box">   
+                                        <input type="text" name="form_desti" value="" placeholder="Destinations" required="">
+                                        <div class="icon-box">
+                                            <span class="flaticon-pin-1"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="text" name="date" placeholder="Any Date" id="datepicker">
+                                        <div class="icon-box">
+                                            <span class="flaticon-calendar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-box">
+                                        <select class="selectpicker" data-width="100%">
+                                            <option selected="selected">1 Week</option>
+                                            <option>2 Week</option>
+                                            <option>3 Week</option>
+                                            <option>4 Week</option>
+                                            <option>5 Week</option>
+                                        </select>
+                                        <div class="icon-box two">
+                                            <span class="flaticon-clock"></span>
+                                        </div>
+                                    </div>
+                                    <div class="button-box">
+                                        <button type="submit">Search now</button>  
+                                    </div>
+                                </div> 
+                            </div>
+                        </form> 
+                    </div>  
+                </div>
+                
+            </div> 
+        </div>    
+    </section> {% endcomment %}
+    <!--End Boats Skipper Form Area Style2-->
+
+    <!--Start Yachts Area style3-->
+    <section class="yachts-area style3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <!--Start Single Yachts Box-->
+                    <div class="siingle-yachts-box marbtm30">
+                        <div class="img-holder">
+                            
+                            <div class="inner">
+                                <img src={% static "images/yachts/pb1.jpg" %} alt="Awesome Image">
+                                <div class="overlay-style-one bg1"></div>
+                            </div>
+                            <div class="rate-box thm-bgclr1">
+                                <h5>$180</h5>
+                                <h6>1 Person</h6>
+                            </div>
+                            
+                        </div>
+                        <div class="title-holder">
+                            <h2><a href="servicedetail1">PARTY BOAT</a></h2>
+                            <span>3 Hour Fun in the Sun</span>
+                            <div class="meta-box">
+                                <ul>
+                                    <li><span class="flaticon-art-and-design"></span>24 in</li>
+                                    <li><span class="flaticon-boat-1"></span>2 JetSki</li>
+                                    <li><span class="flaticon-user"></span>6 men at least</li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </div>
+                    <!--End Single Yachts Box-->
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <!--Start Single Yachts Box-->
+                    <div class="siingle-yachts-box marbtm30">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src={% static "images/yachts/insta.jpg" %} alt="Awesome Image">
+                                <div class="overlay-style-one bg1"></div>
+                            </div>
+                            <div class="rate-box thm-bgclr1">
+                                <h5>SPECIAL</h5>
+                                <h6>OFFER</h6>
+                            </div>
+                        </div>
+                        <div class="title-holder">
+                            <h2> <a href="servicedetail2">Weekdays Special</a></h2>
+                            <span>Mon-Thursday&nbsp&nbsp&nbsp60 min for 120$ <br> Fri-Sunday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp60 min for 130$ </span>
+                            
+                            <div class="meta-box">
+                                <ul>
+                                    <li><span class="flaticon-art-and-design"></span>4 feet</li>
+                                    <li><span class="flaticon-boat-1"></span>1 JetSki</li>
+                                    <li><span class="flaticon-user"></span>2 Seats</li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </div>
+                    <!--End Single Yachts Box-->
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
+                    <!--Start Single Yachts Box-->
+                    <div class="siingle-yachts-box marbtm30">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src={% static "images/yachts/js22.jpg" %} alt="Awesome Image">
+                                <div class="overlay-style-one bg1"></div>
+                            </div>
+                            <div class="rate-box thm-bgclr1">
+                                <h5>Limited</h5>
+                                <h6>Time</h6>
+                            </div>
+                        </div>
+                        <div class="title-holder">
+                            <h2><a href="servicedetail3">Yatch Rentals</a></h2>
+                            <span>3 hours >> 900$</span>
+                            <div class="meta-box">
+                                <ul>
+                                    <li><span class="flaticon-art-and-design"></span>40 ft</li>
+                                    <li><span class="flaticon-boat-1"></span>Life Jackets</li>
+                                    <li><span class="flaticon-user"></span>8 passengers</li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </div>
+                    <!--End Single Yachts Box-->
+                </div>
+                
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <!--Start Single Yachts Box-->
+                    <div class="siingle-yachts-box marbtm30">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src={% static "images/yachts/pbw.jpg" %} alt="Awesome Image">
+                                <div class="overlay-style-one bg1"></div>
+                            </div>
+                            <div class="rate-box thm-bgclr1">
+                                <h5>Regular</h5>
+                                {% comment %} <h6>Week</h6> {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="title-holder">
+                            <h2><a href="servicedetail4">PONTOON BOAT</a></h2>
+                            <span>3 hours for $450 <br> 4 hours for $550</span>
+                            <div class="meta-box">
+                                <ul>
+                                    <li><span class="flaticon-art-and-design"></span>80 ft</li>
+                                    <li><span class="flaticon-boat-1"></span>captain</li>
+                                    <li><span class="flaticon-user"></span>6 passangers</li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </div>
+                    <!--End Single Yachts Box-->
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <!--Start Single Yachts Box-->
+                    <div class="siingle-yachts-box marbtm30">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src={% static "images/yachts/hi3.jpg" %} alt="Awesome Image">
+                                <div class="overlay-style-one bg1"></div>
+                            </div>
+                            <div class="rate-box thm-bgclr1">
+                                <h5>Limited</h5>
+                                <h5>Spots</h5>
+                            </div>
+                        </div>
+                        <div class="title-holder">
+                            <h2><a href="servicedetail5">Double Riders</a></h2>
+                            <span>Extra fee of 20$</span>
+                            <div class="meta-box">
+                                <ul>
+                                    <li><span class="flaticon-art-and-design"></span>6 ft</li>
+                                    <li><span class="flaticon-boat-1"></span>1 JetSki</li>
+                                    <li><span class="flaticon-user"></span>2 Riders</li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </div>
+                    <!--End Single Yachts Box-->
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <!--Start Single Yachts Box-->
+                    <div class="siingle-yachts-box marbtm30">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src={% static "images/yachts/insta4.jpg" %} alt="Awesome Image">
+                                <div class="overlay-style-one bg1"></div>
+                            </div>
+                            <div class="rate-box thm-bgclr1">
+                                <h5>On</h5>
+                                <h5>Demand</h5>
+                            </div>
+                        </div>
+                        <div class="title-holder">
+                            <h2><a href="servicedetail6">Pairs Rider</a></h2>
+                            <span>Limited Spots</span>
+                            <div class="meta-box">
+                                <ul>
+                                    <li><span class="flaticon-art-and-design"></span>10 ft</li>
+                                    <li><span class="flaticon-boat-1"></span>2 JetSki</li>
+                                    <li><span class="flaticon-user"></span>4 Passangers</li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </div>
+                    <!--End Single Yachts Box-->
+                </div>
+                
+            </div>
+        </div>    
+    </section>
+    <!--End Yachts Area style3-->
+
+
+
+    <!--Start footer area-->  
+    <footer class="footer-area">
+        <div class="footer pdtop110">
+            <div class="footer-bg" style="background-image: url('{% static 'images/pattern/water-wave.png' %}');"></div>
+            <div class="container">
+                <div class="row">
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="single-footer-widget box1">
+                            <div class="title">
+                                <h3>About</h3>
+                            </div>
+                            <div class="our-company-info">
+                                <div class="text">
+                                    <p>Miami JetSki Rental service is dealing all the services related to Sailing</p>
+                                </div>    
+                                <div class="subscribe-box">
+                                    <form class="subscribe-form" action="#">
+                                        <input type="email" name="email" placeholder="Email address">
+                                        <button type="submit">Subscribe now</button>
+                                    </form>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="single-footer-widget">
+                            <div class="title">
+                                <h3>Explore</h3>
+                            </div>
+                            <div class="explore-box">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <ul class="explore-links">
+                                            <li><a href="#">About JetSki Rental</a></li>
+                                            <li><a href="#">Destinations</a></li>
+                                            <li><a href="#">Meet the Team</a></li>
+                                            {% comment %} <li><a href="#">Our Pricings</a></li>
+                                            <li><a href="#">Latest News</a></li>	
+                                            <li><a href="#">Online Booking</a></li>	 {% endcomment %}
+                                            <li><a href="#">Contact</a></li>	
+                                        </ul>      
+                                    </div>
+                                    {% comment %} <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <ul class="explore-links">
+                                            <li><a href="#">Support</a></li>
+                                            <li><a href="#">FAQs</a></li>
+                                            <li><a href="#">Work With Us</a></li>
+                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="#">Terms of Conditions</a></li>	
+                                        </ul>      
+                                    </div> {% endcomment %}
+                                </div>    
+                            </div>
+                              
+                        </div>
+                    </div>
+                    <!--End single footer widget-->  
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="single-footer-widget martop50">
+                            <div class="footer-contact-info-box">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src={% static "images/resources/holo.png" %} alt="Awesome Logo" title="Logo"></a>    
+                                </div>
+                                <p>401 Biscayne Blvd. Pier 5,Slip #31, <br> Miami, FL 33132, United States</p>
+                                <a href="mailto:jetskirentalm@gmail.com">jetskirentalm@gmail.com</a><br>
+                                <a href="tel:6668880000">666 888 0000</a>
+                                <div class="footer-social-links">
+                                    <ul class="social-links-style1">
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>                   	  
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="outer-box">
+                    <div class="copyright-text">
+                        <p>© Copyright 2022 by <a href="#">Miami JetSki Rental</a></p>
+                    </div>      
+                </div>    
+            </div>    
+        </div>
+    </footer>   
+    <!--End footer area-->
+
+
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="icon-angle"></span>
+    </button>
+
+
+</div> 
+
+
+
+{% comment %} <script src="js/jquery.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/jquery.bootstrap-touchspin.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.enllax.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/jquery.paroller.min.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/scrollbar.js"></script> {% endcomment %}
+
+<script src={% static 'js/jquery.js'%}></script>
+<script src={% static 'js/appear.js'%}></script>
+<script src={% static 'js/bootstrap.bundle.min.js'%}></script>
+<script src={% static 'js/bootstrap-select.min.js'%}></script>
+<script src={% static 'js/isotope.js'%}></script>
+<script src={% static 'js/jquery.bootstrap-touchspin.js'%}></script>
+<script src={% static 'js/jquery.countTo.js'%}></script>
+<script src={% static 'js/jquery.easing.min.js'%}></script>
+<script src={% static 'js/jquery.enllax.min.js'%}></script>
+<script src={% static 'js/jquery.fancybox.js'%}></script>
+<script src={% static 'js/jquery.mixitup.min.js'%}></script>
+<script src={% static 'js/jquery.paroller.min.js'%}></script>
+<script src={% static 'js/owl.js'%}></script>
+<script src={% static 'js/scrollbar.js'%}></script>
+<script src={% static 'js/validation.js' %}></script>
+<script src={% static 'js/wow.js' %}></script>
+<script src={% static 'js/aos.js' %}></script>
+
+
+
+<script src={% static 'assets/language-switcher/jquery.polyglot.language.switcher.js' %}></script>
+<script src={% static 'assets/timepicker/timePicker.js' %}></script>                       
+<script src={% static 'assets/html5lightbox/html5lightbox.js' %}></script>
+<!-- jQuery ui js -->
+<script src={% static 'assets/jquery-ui-1.11.4/jquery-ui.js' %}></script>
+
+
+
+<!-- thm custom script -->
+<script src={% static 'js/custom.js' %}></script>
+
+
+
+</body>
+</html>

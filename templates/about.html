@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+</head>
+<body>
+    <section>
+        <nav class="navbar navbar-expand-md navbar-light" style="background-color: blueviolet;">
+            <a href="#" class="navbar-brand" style="color: cornsilk; font-weight: bolder;">pgPOT</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="{% url 'home'%}" class="nav-item nav-link active" style="color: cornsilk;">Home</a>
+                    <!-- <a href="#" class="nav-item nav-link" style="color: cornsilk;"> Testimonials</a> -->
+                    {% if user.is_authenticated %}
+                    <!-- <li class="nav-item nav-link" style="color: cornsilk;">Dashboard</li> -->
+                    <a href="{% url 'matchregis'%}" class="nav-item nav-link" style="color: cornsilk;">Match Register</a>
+                    <a href="{% url 'profile'%}" class="nav-item nav-link" style="color: cornsilk;">Profile</a>
+                    {% endif %}
+                    <!-- <a href="#" class="nav-item nav-link" style="color: cornsilk;">Messages</a>
+                    <a href="#" class="nav-item nav-link disabled" tabindex="-1" style="color: cornsilk;">Reports</a> -->
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <!-- <a href="#" class="nav-item nav-link" style="color: cornsilk;">Login</a> -->
+                    {% if user.is_authenticated %}
+                    <li class="nav-item nav-link" style="color: cornsilk; font-weight: bolder;">{{user.first_name}}</li>
+                    <a href="{% url 'logout'%}" class="nav-item nav-link" style="color: cornsilk;">Logout</a>
+                    {% else %}
+                    <a href="accounts/register" class="nav-item nav-link" style="color: cornsilk;">Register</a>
+                    <a href="accounts/login" class="nav-item nav-link" style="color: cornsilk;">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section class="container mt-5">
+        <!--Contact heading-->
+        <div class="row">
+           <!-- <div class="col-sm-12 text-center mb-4">
+            <a class="btn btn-primary" target="_blank" href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=f8876459b9ac2&mfid=1619175810225_f8876459b9ac2#/checkout/openButton"> Donate Now <i class="fa fa-dollar"></i></a>
+          </div> -->
+           <!--Grid column-->
+           <div class="col-sm-12 mb-4 col-md-5">
+              <!--Form with header-->
+              <div class="card border-primary rounded-0">
+                 <div class="card-header p-0">
+                    <div class="bg-primary text-white text-center py-2">
+                       <h3><i class="fa fa-envelope"></i> ABOUT US</h3>
+                       <p class="m-0">We do what we say</p>
+                    </div>
+                 </div>
+                 <div class="card-body p-3">
+                    
+                       <div class="form-group">
+                           <h2>
+                               PGPOTS
+                           </h2>
+                       <!-- <label> Your name </label>
+                       <div class="input-group">
+                          <input value="" type="text" name="data[name]" class="form-control" id="inlineFormInputGroupUsername" placeholder="Your name">
+                       </div> -->
+                     </div>
+                       <div class="form-group">
+                           <h5>
+                               We arrahnge online games tournaments on daily basis
+                           </h3>
+                          <!-- <label>Your email</label>
+                          <div class="input-group mb-2 mb-sm-0">
+                             <input type="email" value="" name="data[email]" class="form-control" id="inlineFormInputGroupUsername" placeholder="Email">
+                          </div> -->
+                       </div>
+                       <div class="form-group">
+                           <p>
+                               Winners get prizes instantly as they win
+                           </p>
+                          <!-- <label>Subject</label>
+                          <div class="input-group mb-2 mb-sm-0">
+                             <input type="text" name="data[subject]" class="form-control" id="inlineFormInputGroupUsername" placeholder="Subject">
+                          </div> -->
+                       </div>
+                       <div class="form-group">
+                          <label>Message</label>
+                          <div class="input-group mb-2 mb-sm-0">
+                             <input type="text" class="form-control" name="mesg">
+                          </div>
+                       </div>
+                       <div class="text-center">
+                          <input type="submit" name="submit" value="submit" class="btn btn-primary btn-block rounded-0 py-2">
+                       </div>
+                  
+                      </div>
+                       
+                 </div>
+              </div>
+           <!--Grid column-->
+           
+           <!--Grid column-->
+           <div class="col-sm-12 col-md-7">
+              <!--Google map-->
+              <div class="mb-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.4721583993164!2d74.31795508739916!3d31.538654333352834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904a23e86874d%3A0x149cded7f532255b!2sShama%20West!5e0!3m2!1sen!2sro!4v1619524512304!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                 <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d117223.77996815204!2d85.3213263!3d23.3432048!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x11b5a9b0042eef56!2sourcita.com!5e0!3m2!1sen!2sin!4v1589706571407!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+              </div>
+              <!--Buttons-->
+              <div class="row text-center">
+                 <div class="col-md-4">
+                    <a class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="fa fa-map-marker"></i></a>
+                    <p> Shadman Lahore </p>
+                 </div>
+                 <div class="col-md-4">
+                    <a class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="fa fa-phone"></i></a>
+                    <p>0321-4440853</p>
+                 </div>
+                 <div class="col-md-4">
+                    <a class="bg-primary px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="fa fa-envelope"></i></a>
+                    <p> pgpotsofficial@gmail.com</p>
+                 </div>
+              </div>
+              
+           </div>
+           <!--Grid column-->
+             </div>
+     </section>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+    <style>
+            .container {
+                padding: 2rem 0rem;
+            }
+        
+            h4 {
+                margin: 2rem 0rem 1rem 0rem;
+            }
+        </style>
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-md navbar-light" style="background-color: blueviolet;">
+            <a href="#" class="navbar-brand" style="color: cornsilk; font-weight: bolder;">pgPOT</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="{% url 'home'%}" class="nav-item nav-link active" style="color: cornsilk;">Home</a>
+                    <!-- <a href="#" class="nav-item nav-link" style="color: cornsilk;"> Testimonials</a> -->
+                    {% if user.is_authenticated %}
+                    <!-- <li class="nav-item nav-link" style="color: cornsilk;">Dashboard</li> -->
+                    <a href="{% url 'matchregis'%}" class="nav-item nav-link" style="color: cornsilk;">Match Register</a>
+                    <a href="{% url 'profile'%}" class="nav-item nav-link" style="color: cornsilk;">Profile</a>
+                    {% endif %}
+                    <!-- <a href="#" class="nav-item nav-link" style="color: cornsilk;">Messages</a>
+                    <a href="#" class="nav-item nav-link disabled" tabindex="-1" style="color: cornsilk;">Reports</a> -->
+                    <a href="{% url 'about'%}" class="nav-item nav-link" style="color: cornsilk;">About</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <!-- <a href="#" class="nav-item nav-link" style="color: cornsilk;">Login</a> -->
+                    {% if user.is_authenticated %}
+                    <li class="nav-item nav-link" style="color: cornsilk; font-weight: bolder;">{{user.first_name}}</li>
+                    <a href="{% url 'logout'%}" class="nav-item nav-link" style="color: cornsilk;">Logout</a>
+                    {% else %}
+                    <a href="{% url 'register'%}" class="nav-item nav-link" style="color: cornsilk;">Register</a>
+                    <a href="{% url 'login'%}" class="nav-item nav-link" style="color: cornsilk;">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <form action="login" method="POST">
+                    {% csrf_token %}
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-md-2 col-form-label">User Name</label>
+                        <div class="col-sm-8 col-md-10">
+                            <input type="text" class="form-control" name="username" placeholder="username">
+                          <!-- <input type="text" class="form-control" id="email5" placeholder="Email"> -->
+                        </div>
+                    </div>
+                    <div class="form-group row" style="padding-top: 5px;">
+                        <label class="col-sm-4 col-md-2 col-form-label">Password</label>
+                        <div class="col-sm-8 col-md-10">
+                            <input type="password" class="form-control" name="password" placeholder="password">
+                            <!-- <input type="text" class="form-control" id="email5" placeholder="Email"> -->
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group row">
+                        <div class="col-sm-10" style="padding-top: 20px;">
+                          <button type="Submit" class="btn btn-primary">Sign in</button>
+                          <!-- <input  type="Submit"> -->
+
+                        </div>
+                      </div>
+                    <!-- <input type="text" name="username" placeholder="username"> -->
+                    <!-- <input type="password" name="password" placeholder="password"> -->
+                    <!-- <input type="Submit"> -->
+                </form>
+
+                <a href="{% url 'password_reset'%}">Forget Password</a>
+                <div>
+                    {% for message in messages %}
+                    <h3> {{message}}</h3>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

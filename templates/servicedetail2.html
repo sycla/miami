@@ -1,0 +1,1014 @@
+{% load static %}
+{% static "images" as baseUrl %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weekdays Special || Miami JETSKI</title>
+
+	<!-- Responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+	{% comment %} <link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/imp.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom-animate.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'styles\aos.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\imp.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\custom-animate.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\popupform.css'%}">
+    {% comment %} <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'styles\color.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\rtl.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\style.css'%}">
+    <link rel="stylesheet" href="{% static 'styles\responsive.css'%}">
+    
+    <!-- Favicon -->
+    {% comment %} <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16"> {% endcomment %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href={% static "images/favicon/apple-touch-icon.png" %}>
+    <link rel="icon" type="image/png" href= {% static "images/favicon/favicon-32x32.png" %} sizes="32x32">
+    <link rel="icon" type="image/png" href={% static "images/favicon/favicon-16x16.png" %} sizes="16x16">
+
+    <!-- Fixing Internet Explorer-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    
+</head>
+
+<body>
+<div class="boxed_wrapper ltr">
+
+    {% comment %} <div class="preloader"></div>  {% endcomment %}
+
+    <!-- page-direction -->
+    {% comment %} <div class="page_direction">
+        <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
+        <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
+    </div> {% endcomment %}
+    <!-- page-direction end -->
+
+    <!-- main header -->
+    <header class="main-header"> 
+        <!--Start Header upper -->
+        <div class="header-upper">
+            <div class="container-box clearfix">
+                <div class="outer-box clearfix"> 
+                    <div class="header-upper-left float-left clearfix">
+                        <div class="logo">
+                            <a href="index.html"><img src={% static "images/resources/holo.png" %} alt="Awesome Logo" title=""></a>
+                        </div>
+                    </div>
+                    <div class="header-upper-middle float-left clearfix">
+                        <div class="nav-outer clearfix">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><span class="icon fa fa-bars"></span></div>
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="dropdown"><a href="{% url 'home'%}">Home</a>
+                                            {% comment %} <ul>
+                                                <li><a href="index.html">Home Page 01</a></li>
+                                                <li><a href="index-2.html">Home Page 02</a></li>
+                                                <li class="dropdown"><a href="#">Header Styles</a>
+                                                    <ul>
+                                                        <li><a href="index.html">Header Style One</a></li>
+                                                        <li><a href="index-2.html">Header Style Two</a></li>
+                                                    </ul>    
+                                                </li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                        {% comment %} <li class="dropdown"><a href="servicedetail1">Book Now</a>
+                                            <ul>
+                                                <li><a href="servicedetail1">Party Boats</a></li>
+                                                <li><a href="servicedetail2">Weekdays Special</a></li>
+                                                <li><a href="servicedetail3">Yatch Rentals</a></li>
+                                                <li><a href="servicedetail4">PONTOON BOAT</a></li>
+                                                <li><a href="servicedetail5">Double Riders</a></li>
+                                                <li><a href="servicedetail6">Pairs Rider</a></li>
+                                            </ul> 
+                                        </li> {% endcomment %}
+                                        <li><a href="miamiabout">About</a></li>
+                                        <li><a href="miamiservices">Services</a></li>
+                                        {% comment %} <li><a href="miamiboats">Our Boats</a> {% endcomment %}
+                                            {% comment %} <ul>
+                                                <li><a href="yachts.html">Our Yachts</a></li>
+                                                <li><a href="yachts-details.html">Yachts Details</a></li>
+                                            </ul> {% endcomment %}
+                                        {% comment %} </li> {% endcomment %}
+                                        {% comment %} <li><a href="destinations.html">Destinations</a></li>
+                                        <li class="dropdown"><a href="#">News</a>
+                                        	<ul>
+                                                <li><a href="blog.html">Latest News</a></li>
+                                                <li><a href="blog-single.html">News Single</a></li>
+                                            </ul>
+                                        </li> {% endcomment %}
+                                        <li><a href="miamicontact">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>                        
+                            <!-- Main Menu End-->
+                            <div class="menu-right-content">
+                                <div class="header-social-links">
+                                    <ul class="social-links-style1">
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header-upper-right float-right clearfix">
+                        <div class="call-us-now">
+                            <div class="icon thm-clr1">
+                                <span class="flaticon-smartphone"></span>    
+                            </div>
+                            <div class="title">
+                                <h6>Call Now</h6>
+                                <a href="tel:6668880000">666 888 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!--End Header Upper-->
+        
+        <!--Start header lawer -->
+        <div class="header-lawer">
+            <div class="container-box clearfix">
+                <div class="outer-box clearfix">
+                    <!--Top Left-->
+                    <div class="header-lawer-left float-left">
+                        <ul class="clearfix">
+                            <li><span class="flaticon-pin"></span><b>Address:</b> 401 Biscayne Blvd. Pier 5,Slip #31, Miami, FL 33132, United States</li>
+                            <li><span class="flaticon-mail"></span><b>Email:</b> <a href="mailto:jetskirentalm@gmail.com">jetskirentalm@gmail.com</a></li>
+                            <li><span class="flaticon-clock"></span><b>Timing:</b> Mon - Fri 09:00am - 07:00pm</li>
+                        </ul>
+                    </div>
+                    <!--Top Right-->
+                    {% comment %} <div class="header-lawer-right float-right">
+                        
+                        <div class="language-switcher">
+                            <div id="polyglotLanguageSwitcher">
+                                <form action="#">
+                                    <select id="polyglot-language-options">
+                                        <option id="en" value="en" selected>English</option>
+                                        <option id="fr" value="fr">French</option>
+                                        <option id="de" value="de">German</option>
+                                        <option id="it" value="it">Italian</option>
+                                        <option id="es" value="es">Spanish</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div> {% endcomment %}
+                        {% comment %} <div class="login-signup-box">
+                            <ul>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Sign Up</a></li>
+                            </ul>
+                        </div>   
+                             {% endcomment %}
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <!--End header lawer -->
+       
+        <!--Sticky Header-->
+        {% comment %} <div class="sticky-header">
+            <div class="container">
+                <div class="clearfix"> {% endcomment %}
+                    <!--Logo-->
+                    {% comment %} <div class="logo float-left">
+                        <a href="index.html" class="img-responsive"><img src={% static "images/resources/holo.png" %} alt="" title=""></a>
+                    </div> {% endcomment %}
+                    <!--Right Col-->
+                    {% comment %} <div class="right-col float-right"> {% endcomment %}
+                        <!-- Main Menu -->
+                        {% comment %} <nav class="main-menu clearfix"> {% endcomment %}
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                        {% comment %} </nav>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <!--End Sticky Header-->
+        
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src={% static "images/resources/holo.png" %} alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <!--Social Links-->
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="fab fa fa-facebook-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-twitter-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-pinterest-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-google-plus-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-youtube-square"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu --> 
+         
+    </header>
+
+
+    <!--Start breadcrumb area-->     
+    <section class="breadcrumb-area" style="background-image: url('{% static 'images/breadcrumb/bc1.jpg'%}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title">
+                           <h1>Boats Details</h1>
+                        </div>
+                        <div class="breadcrumb-menu">
+                            <ul class="clearfix">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">Weekdays Special Details</li>
+                            </ul>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End breadcrumb area-->
+
+    <!--Start Yachts Details Area-->
+    <section class="yachts-details-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="yachts-details-content">
+                        <div class="yachts-box">
+                            <div class="yachts-main-image-box">
+                                <ul class="bxslider">
+                                    <li>
+                                        <div class="single-box clearfix">
+                                            <div class="img-holder">
+                                                <img src={% static "images/yachts/insta.jpg" %} alt="Awesome Image">
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                    {% comment %} <li>
+                                        <div class="single-box clearfix">
+                                            <div class="img-holder">
+                                                <img src={% static "images/resources/party2.jpg" %} alt="Awesome Image">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-box clearfix">
+                                            <div class="img-holder">
+                                                <img src={% static "images/resources/party3.jpg" %} alt="Awesome Image">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-box clearfix">
+                                            <div class="img-holder">
+                                                <img src={% static "images/resources/party4.jpg" %} alt="Awesome Image">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-box clearfix">
+                                            <div class="img-holder">
+                                                <img src={% static "images/resources/party5.jpg" %} alt="Awesome Image">
+                                            </div>
+                                        </div>
+                                    </li> {% endcomment %}
+                                </ul>
+
+                                <div class="slider-pager">
+                                    <div class="center">
+                                        <ul class="nav-link list-inline">
+                                            <li id="slider-prev"></li>
+                                            <li id="slider-next"></li>
+                                        </ul>  
+                                    </div>
+                                </div>    
+                            </div>
+
+                            <div class="yachts-gallery-image-box">
+                                <div class="slider-pager">
+                                    <ul class="thumb-box yachts-image-carousel owl-carousel owl-theme">
+                                        <li>
+                                            <a class="active" data-slide-index="0" href="#">
+                                                <div class="thumb-image">
+                                                    <img src={% static "images/resources/yachts-thumb-1.jpg" %} alt="Awesome Thumb Image">    
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-slide-index="1" href="#">
+                                                <div class="thumb-image">
+                                                    <img src={% static "images/resources/yachts-thumb-2.jpg" %} alt="Awesome Thumb Image">    
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-slide-index="2" href="#">
+                                                <div class="thumb-image">
+                                                    <img src={% static "images/resources/yachts-thumb-3.jpg" %} alt="Awesome Thumb Image">    
+                                                </div>    
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-slide-index="3" href="#">
+                                                <div class="thumb-image">
+                                                    <img src={% static "images/resources/yachts-thumb-4.jpg" %} alt="Awesome Thumb Image">    
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-slide-index="4" href="#">
+                                                <div class="thumb-image">
+                                                    <img src={% static "images/resources/yachts-thumb-5.jpg" %} alt="Awesome Thumb Image">    
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="yachts-content">
+                            <h1>WEEKDAYS SPECIAL</h1>
+                            <h2>3 Hour Fun in the Sun</h2>
+                            <h3>Monday-Thursday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp60 min for 120$<br>
+                                Friday-Sunday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp60 min for 130$</h3>
+                            <div class="text">
+                                <p>Single Rider Only <br> ***Limited spots**</p>
+                            </div>
+                        </div>
+                        {% comment %} <div class="specifications-box">
+                            <div class="row">
+                                <div class="col-xl-8">
+                                    <div class="specifications-content">
+                                        <h1>Specifications</h1>
+                                        <ul>
+                                            <li><span class="flaticon-calendar"></span>Year: <b>2019</b></li>
+                                            <li><span class="flaticon-art-and-design"></span>Length: <b>24 ft</b></li> {% endcomment %}
+                                            {% comment %} <li><span class="flaticon-user"></span>Berths: <b>2</b></li> {% endcomment %}
+                                            {% comment %} <li><span class="flaticon-boat"></span>JetSki: <b>2</b></li>
+                                            <li><span class="flaticon-shower"></span>WC / Showers: <b>4</b></li>
+                                            <li><span class="flaticon-boat-1"></span>Single cabins: <b>4</b></li>
+                                        </ul>
+                                    </div>
+                                </div> {% endcomment %}
+                                {% comment %} <div class="col-xl-4">
+                                    <div class="specifications-image wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                        <img src={% static "images/resources/specifications.jpg" %} alt="Awesome Image">
+                                    </div>    
+                                </div> {% endcomment %}
+                            {% comment %} </div>    
+                        </div> {% endcomment %}
+                        {% comment %} <div class="equipment-content">
+                            <h1>Equipment</h1>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="equipment-single">
+                                        <h3>Cruise</h3>
+                                        <ul>
+                                            <li>Batten mainsail</li>
+                                            <li>Fully battened mainsail</li>
+                                            <li>Autopilot</li>
+                                            <li>Skipper</li>
+                                            <li>Hostess</li>
+                                        </ul>    
+                                    </div>    
+                                </div>
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="equipment-single">
+                                        <h3>Hospitality</h3>
+                                        <ul>
+                                            <li>Air conditioning</li>
+                                            <li>Cockpit speakers</li>
+                                            <li>Cockpit cushions</li>
+                                            <li>Wi-Fi / Hotspot</li>
+                                            <li>Stove</li>
+                                            <li>Radio</li>
+                                        </ul>    
+                                    </div>    
+                                </div>
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="equipment-single">
+                                        <h3>Comfort</h3>
+                                        <ul>
+                                            <li>Beach Towels</li>
+                                            <li>Fans in salon</li>
+                                            <li>Ice maker</li>
+                                            <li>Energy generator</li>
+                                            <li>Bimini top</li>
+                                        </ul>    
+                                    </div>    
+                                </div>
+                                
+                            </div>
+                        </div> {% endcomment %}
+                        
+                        {% comment %} <div class="yachts-map-box">
+                            <h1>Italy Ocean Map</h1>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="map-outer wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                        <!--Map Canvas-->
+                                        <div class="map-canvas"
+                                            data-zoom="12"
+                                            data-lat="-37.817085"
+                                            data-lng="144.955631"
+                                            data-type="roadmap"
+                                            data-hue="#ffc400"
+                                            data-title="Envato"
+                                            data-icon-path="images/resources/map-marker.png"
+                                            data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                            
+                    </div>    
+                </div>
+                
+                <div class="col-xl-4 col-lg-7 col-md-12 col-sm-12">
+                    <div class="specifications-box">
+                        <div class="row">
+                            <div class="col-xl-8">
+                                <div class="specifications-content">
+                                    <h1>Specifications</h1>
+                                    <ul>
+                                        <li><span class="flaticon-calendar"></span>Year: <b>2019</b></li>
+                                        <li><span class="flaticon-art-and-design"></span>Length: <b>24 ft</b></li>
+                                        {% comment %} <li><span class="flaticon-user"></span>Berths: <b>2</b></li> {% endcomment %}
+                                        <li><span class="flaticon-boat"></span>JetSki: <b>2</b></li>
+                                        <li><span class="flaticon-shower"></span>WC / Showers: <b>4</b></li>
+                                        <li><span class="flaticon-boat-1"></span>Single cabins: <b>4</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% comment %} <div class="col-xl-4">
+                                <div class="specifications-image wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                    <img src={% static "images/resources/specifications.jpg" %} alt="Awesome Image">
+                                </div>    
+                            </div> {% endcomment %}
+                        </div>    
+                    </div>
+                     
+                    {% comment %} <div class="price-box thm-bgclr1">
+                        <div class="title">
+                            <h6>$180 per person Mon-Thur</h6>
+                            <h6>$200 per person Fri-Sun</h6>
+                        </div>
+
+                    </div> {% endcomment %}
+                    {% comment %} <div class="boats-skipper-search-box yachts-details-page text-center">
+                        <form class="boats-skipper-form" name="boats-skipper-form" action="#" method="post">  
+                            <div class="input-box">   
+                                <input type="text" name="form_desti" value="" placeholder="Destinations" required="">
+                                <div class="icon-box">
+                                    <span class="flaticon-pin-1"></span>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" name="date" placeholder="Any Date" id="datepicker">
+                                <div class="icon-box">
+                                    <span class="flaticon-calendar"></span>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <select class="selectpicker" data-width="100%">
+                                    <option selected="selected">1 Week</option>
+                                    <option>2 Week</option>
+                                    <option>3 Week</option>
+                                    <option>4 Week</option>
+                                    <option>5 Week</option>
+                                </select>
+                                <div class="icon-box two">
+                                    <span class="flaticon-clock"></span>
+                                </div>
+                            </div>
+                            <div class="need-skipper">
+                                <input type="checkbox" name="skipper1" id="skipper" checked>
+                                <label for="skipper"><span></span>Do you need a skipper?</label>
+                            </div>
+                            <div class="button-box">
+                                <button type="submit">Search now</button>  
+                            </div>
+                        </form> 
+                    </div>  {% endcomment %}
+                    <div>
+                    <button type="button" style="margin-top: 80px" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
+                        Book 
+                      </button>
+                    </div>
+                </div>
+                {% comment %} <form action="send-mail" method="post" class="w-50 m-auto">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" autocomplete="off">
+                      </div>
+                      <div class="mb-3">
+                        <label for="msg" class="form-label">Message</label>
+                        <textarea class="form-control" id="msg" rows="3" name="msg"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="bdate" class="form-label">Select Date</label>
+                        <input type="date" id="bookingdate" name="bookingdate">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Send</button>
+                </form> {% endcomment %}
+                
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title text-center" id="exampleModalLabel">Booking Form</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            {% comment %} <form action="send-mail" method="post" class="w-50 m-auto">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" autocomplete="off">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="msg" class="form-label">Message</label>
+                                    <textarea class="form-control" id="msg" rows="3" name="msg"></textarea>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="bdate" class="form-label">Select Date</label>
+                                    <input type="date" id="bookingdate" name="bookingdate">
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Send</button>
+                            </form> {% endcomment %}
+
+
+                            <div class="container">
+                                {% comment %} <div class="py-5 text-center">
+                                  <h2>Booking Form</h2> {% endcomment %}
+                                  {% comment %} <p class="lead">Below is an example form built entirely with Bootstrap 5 form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> {% endcomment %}
+                                {% comment %} </div> {% endcomment %}
+                              
+                                <div class="row">
+                                  <div class="col-md-12 order-md-1">
+                                    {% comment %} <h4 class="mb-3">Billing address</h4> {% endcomment %}
+                                    <form  action="send-mail" method="post">
+                                        {% csrf_token %}
+
+                                        {% comment %} <form action="send-mail" method="post" class="w-50 m-auto">
+                                            {% csrf_token %}
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email address</label>
+                                                <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" autocomplete="off">
+                                              </div>
+                                              <div class="mb-3">
+                                                <label for="msg" class="form-label">Message</label>
+                                                <textarea class="form-control" id="msg" rows="3" name="msg"></textarea>
+                                              </div>
+                                              <div class="mb-3">
+                                                <label for="bdate" class="form-label">Select Date</label>
+                                                <input type="date" id="bookingdate" name="bookingdate">
+                                              </div>
+                                              <button type="submit" class="btn btn-primary">Send</button>
+                                        </form> {% endcomment %}
+
+                                      <div class="row">
+
+                                        {% comment %} <div class="mb-3">
+                                            <label for="email" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" autocomplete="off">
+                                          </div> {% endcomment %}
+                                          
+                                        <div class="col-md-6 mb-3">
+                                          <label for="firstName" class="form-label">First name</label>
+                                          <input type="text" class="form-control" name="firstName" id="firstName" placeholder="">
+                                          <div class="invalid-feedback">
+                                            Valid first name is required.
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                          <label for="lastName">Last name</label>
+                                          <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required>
+                                          <div class="invalid-feedback">
+                                            Valid last name is required.
+                                          </div>
+                                        </div>
+                                      </div>
+                              
+                                      {% comment %} <div class="mb-3">
+                                        <label for="username">Username</label>
+                                        <div class="input-group">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text">@</span>
+                                          </div>
+                                          <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                          <div class="invalid-feedback" style="width: 100%;">
+                                            Your username is required.
+                                          </div>
+                                        </div>
+                                      </div> {% endcomment %}
+                              
+                                      <div class="mb-3">
+                                        <label for="userEmail">Email <span class="text-muted">(Optional)</span></label>
+                                        <input type="email" class="form-control" name="userEmail" id="userEmail" placeholder="you@example.com">
+                                        <div class="invalid-feedback">
+                                          Please enter a valid email address for shipping updates.
+                                        </div>
+                                      </div>
+
+                                      <div class="mb-3">
+                                        <label for="bdate" class="form-label">Select Date</label>
+                                        <input style="border: solid" type="date" id="bookingdate" name="bookingdate">
+
+                                        {% comment %} <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com"> {% endcomment %}
+                                        <div class="invalid-feedback">
+                                          Please enter a valid email address for shipping updates.
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="mb-3">
+                                        <label for="address">Address</label>
+                                        <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required>
+                                        <div class="invalid-feedback">
+                                          Please enter your shipping address.
+                                        </div>
+                                      </div>
+                              
+                                      <div class="mb-3">
+                                        <label for="msg" class="form-label">Message</label>
+                                        <textarea class="form-control" id="msg" rows="3" name="msg"></textarea>
+                                      </div>
+                                      {% comment %} <div class="mb-3">
+                                        <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                                        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                                      </div> {% endcomment %}
+                              
+                                      <div class="row">
+                                        <div class="col-md-5 mb-3">
+                                          <label for="country">Country</label>
+                                          <select class="custom-select d-block w-100" id="country" required>
+                                            <option value="">Choose...</option>
+                                            <option>United States</option>
+                                          </select>
+                                          <div class="invalid-feedback">
+                                            Please select a valid country.
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                          <label for="state">State</label>
+                                          <select class="custom-select d-block w-100" id="state" required>
+                                            <option value="">Choose...</option>
+                                            <option>California</option>
+                                          </select>
+                                          <div class="invalid-feedback">
+                                            Please provide a valid state.
+                                          </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                          <label for="zip">Zip</label>
+                                          <input type="text" class="form-control" id="zip" placeholder="" required>
+                                          <div class="invalid-feedback">
+                                            Zip code required.
+                                          </div>
+                                        </div>
+                                      </div>
+                                      {% comment %} <hr class="mb-4">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="same-address">
+                                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                                      </div>
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="save-info">
+                                        <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                                      </div>
+                                      <hr class="mb-4">
+                              
+                                      <h4 class="mb-3">Payment</h4>
+                              
+                                      <div class="d-block my-3">
+                                        <div class="custom-control custom-radio">
+                                          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                          <label class="custom-control-label" for="credit">Credit card</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                          <label class="custom-control-label" for="debit">Debit card</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                          <label class="custom-control-label" for="paypal">PayPal</label>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                          <label for="cc-name">Name on card</label>
+                                          <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                          <small class="text-muted">Full name as displayed on card</small>
+                                          <div class="invalid-feedback">
+                                            Name on card is required
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                          <label for="cc-number">Credit card number</label>
+                                          <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                          <div class="invalid-feedback">
+                                            Credit card number is required
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                          <label for="cc-expiration">Expiration</label>
+                                          <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                          <div class="invalid-feedback">
+                                            Expiration date required
+                                          </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                          <label for="cc-cvv">CVV</label>
+                                          <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                          <div class="invalid-feedback">
+                                            Security code required
+                                          </div>
+                                        </div>
+                                      </div> {% endcomment %}
+                                      <hr class="mb-4">
+                                      {% comment %} <button type="submit" class="btn btn-primary">Send</button> {% endcomment %}
+
+                                      <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to Booking</button>
+                                    </form>
+                                  </div>
+                                </div>
+                              
+                                <footer class="my-5 pt-5 text-muted text-center text-small">
+                                  <p class="mb-1">&copy; 2021 - 2045 Company Name</p>
+                                  <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">Privacy</a></li>
+                                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                                    <li class="list-inline-item"><a href="#">Support</a></li>
+                                  </ul>
+                                </footer>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                            
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+        <div style="background: linear-gradient(90deg, rgba(156,214,226,1) 36%, rgba(140,140,193,1) 51%, rgba(140,140,193,1) 53%, rgba(62,57,145,1) 82%); margin-top: 80px">
+            <h2 style="text-align: center">
+                JET-SKI RENTAL RULES AND REGULATIONS
+            </h2>
+            <ul>
+                <li>EVERYONE MUST BRING A GOVERNMENT ISSUED ID</li>
+                <li>MUST BE 18 OR OLDER TO RENT</li>
+                <li>ANY ONE UNDER 18 YEARS NEED TO HAVE A PARENTS/ LEGAL GUARDIAN</li>
+                <li>MAX WEIGHT PER JET-SKI 350 IBS</li>
+                <li>ALL RIDERS ARE GUIDED BY AN INSTRUCTOR</li>
+                <li>ANY ONE BORN ON OR AFTER JANUARY, 1 1988 IS REQUIRE TO HAVE</li>
+                <li>A BOATERS EDUCATION CARD OR SUCCESSFULLY PASS THE TEMPORARY CERTIFICATION</li>
+                <li>SAVE AND SHOW PROOF OF THE CERTIFICATE AT THE TIME OF RENT</li>
+            </ul>
+        </div>
+    </section>
+   
+    <!--End Yachts Details Area-->
+
+    {% comment %} <form action="send-mail" method="post" class="w-50 m-auto">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" autocomplete="off">
+          </div>
+          <div class="mb-3">
+            <label for="msg" class="form-label">Message</label>
+            <textarea class="form-control" id="msg" rows="3" name="msg"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+    </form> {% endcomment %}
+    
+
+    <!--Start footer area-->  
+    <footer class="footer-area">
+        <div class="footer pdtop110">
+            <div class="footer-bg" style="background-image: url('{% static 'images/pattern/water-wave.png' %}');"></div>
+            <div class="container">
+                <div class="row">
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="single-footer-widget box1">
+                            <div class="title">
+                                <h3>About</h3>
+                            </div>
+                            <div class="our-company-info">
+                                <div class="text">
+                                    <p>Miami JetSki Rental service is dealing all the services related to Sailing</p>
+                                </div>    
+                                <div class="subscribe-box">
+                                    <form class="subscribe-form" action="#">
+                                        <input type="email" name="email" placeholder="Email address">
+                                        <button type="submit">Subscribe now</button>
+                                    </form>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="single-footer-widget">
+                            <div class="title">
+                                <h3>Explore</h3>
+                            </div>
+                            <div class="explore-box">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <ul class="explore-links">
+                                            <li><a href="#">About JetSki Rental</a></li>
+                                            <li><a href="#">Destinations</a></li>
+                                            <li><a href="#">Meet the Team</a></li>
+                                            {% comment %} <li><a href="#">Our Pricings</a></li>
+                                            <li><a href="#">Latest News</a></li>    
+                                            <li><a href="#">Online Booking</a></li>  {% endcomment %}
+                                            <li><a href="#">Contact</a></li>    
+                                        </ul>      
+                                    </div>
+                                    {% comment %} <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <ul class="explore-links">
+                                            <li><a href="#">Support</a></li>
+                                            <li><a href="#">FAQs</a></li>
+                                            <li><a href="#">Work With Us</a></li>
+                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="#">Terms of Conditions</a></li>    
+                                        </ul>      
+                                    </div> {% endcomment %}
+                                </div>    
+                            </div>
+                              
+                        </div>
+                    </div>
+                    <!--End single footer widget-->  
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="single-footer-widget martop50">
+                            <div class="footer-contact-info-box">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src={% static "images/resources/holo.png" %} alt="Awesome Logo" title="Logo"></a>    
+                                </div>
+                                <p>401 Biscayne Blvd. Pier 5,Slip #31, <br> Miami, FL 33132, United States</p>
+                                <a href="mailto:jetskirentalm@gmail.com">jetskirentalm@gmail.com</a><br>
+                                <a href="tel:000000000">000 000 0000</a>
+                                <div class="footer-social-links">
+                                    <ul class="social-links-style1">
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a> 
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="outer-box">
+                    <div class="copyright-text">
+                        <p>© Copyright 2022 by <a href="#">Miami JetSki Rental</a></p>
+                    </div>      
+                </div>    
+            </div>    
+        </div>
+    </footer>   
+    <!--End footer area-->
+
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="icon-angle"></span>
+    </button>
+
+</div> 
+
+
+
+{% comment %} <script src="js/jquery.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/jquery.bootstrap-touchspin.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.enllax.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/jquery.paroller.min.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/scrollbar.js"></script> {% endcomment %}
+<script src={% static 'js/jquery.js'%}></script>
+<script src={% static 'js/appear.js'%}></script>
+<script src={% static 'js/bootstrap.bundle.min.js'%}></script>
+<script src={% static 'js/bootstrap-select.min.js'%}></script>
+<script src={% static 'js/isotope.js'%}></script>
+<script src={% static 'js/jquery.bootstrap-touchspin.js'%}></script>
+<script src={% static 'js/jquery.countTo.js'%}></script>
+<script src={% static 'js/jquery.easing.min.js'%}></script>
+<script src={% static 'js/jquery.enllax.min.js'%}></script>
+<script src={% static 'js/jquery.fancybox.js'%}></script>
+<script src={% static 'js/jquery.mixitup.min.js'%}></script>
+<script src={% static 'js/jquery.paroller.min.js'%}></script>
+<script src={% static 'js/owl.js'%}></script>
+<script src={% static 'js/scrollbar.js'%}></script>
+<script src={% static 'js/validation.js' %}></script>
+<script src={% static 'js/wow.js' %}></script>
+<script src={% static 'js/aos.js' %}></script>
+
+
+{% comment %} <script src="assets/language-switcher/jquery.polyglot.language.switcher.js"></script>
+<script src="assets/timepicker/timePicker.js"></script>                       
+<script src="assets/html5lightbox/html5lightbox.js"></script> {% endcomment %}
+<script src={% static 'assets/language-switcher/jquery.polyglot.language.switcher.js'%}></script>
+<script src={% static 'assets/timepicker/timePicker.js'%}></script>
+<script src={% static 'assets/html5lightbox/html5lightbox.js'%}></script>
+<!-- jQuery ui js -->
+{% comment %} <script src="assets/jquery-ui-1.11.4/jquery-ui.js"></script> {% endcomment %}
+<script src={% static 'assets/jquery-ui-1.11.4/jquery-ui.js'%}></script>
+
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+<script src={% static "js/map-script.js" %}></script>
+
+
+
+
+<!-- thm custom script -->
+{% comment %} <script src="js/custom.js"></script> {% endcomment %}
+<script src={% static 'js/custom.js'%}></script>
+
+
+
+</body>
+</html>
