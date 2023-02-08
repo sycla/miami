@@ -1,0 +1,1 @@
+web: gunicorn pubgpot.wsgi --log-file -
